@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova.plugin.l156printer" version="0.0.1"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>l156printer</name>
+    <js-module name="l156printer" src="www/l156printer.js">
+        <clobbers target="l156printer" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="l156printer">
+                <param name="android-package" value="cordova.plugin.l156printer.l156printer" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <provider android:name="androidx.core.content.FileProvider" android:authorities="${applicationId}.fileprovider" android:exported="false" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths" />
+        </provider>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/l156printer.java" target-dir="src/cordova/plugin/l156printer/l156printer" />
+        <source-file src="src/android/Task.java" target-dir="src/cordova/plugin/l156printer/Task" />
+
+
+        <lib-file src="src/android/libs/autoreplyprint.aar" />
+        <framework src="src/android/autoreplyprint.gradle" custom="true" type="gradleReference" />
+
+    </platform>
+</plugin>

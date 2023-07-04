@@ -1,0 +1,17 @@
+{
+  "name": "cordova.plugin.l156printer",
+  "version": "0.0.1",
+  "description": "Printer plugin for L156 Printer",
+  "cordova": {
+    "id": "cordova.plugin.l156printer",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Mukopaje",
+  "license": "ISC"
+}
